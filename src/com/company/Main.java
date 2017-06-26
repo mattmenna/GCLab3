@@ -10,17 +10,28 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
-System.out.println("Learn your squares and cubes!");
+        // write your code here
+        System.out.println("Learn your squares and cubes!");
         Scanner scnr = new Scanner(System.in);
         System.out.println("Enter an integer");
         int uInput = scnr.nextInt();
 
+        System.out.println("Number     " + "Squared    " + "Cubed      ");
+        System.out.println("===========" + "===========" + "===========");
+
+        for (int i=1; i<=uInput; i++){
+            System.out.print(i + "     ");
+            System.out.print(square(i) + "     ");
+            System.out.println(cube(i) + "     ");
+        }
+
     }
+
     private static double square(int input) {
         double squareNum = Math.pow(input, 2);
         return squareNum;
     }
+
     private static double cube(int input) {
         double cubeNum = Math.pow(input, 3);
         return cubeNum;
