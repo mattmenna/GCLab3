@@ -17,8 +17,13 @@ System.out.println("Learn your squares and cubes!");
         int uInput = scnr.nextInt();
 
     }
-    private static int square( int input) {
-        int squareNum = Math.pow(input, 2)
-        return squareNum
+    private static double square(int input) {
+        double squareNum = Math.pow(input, 2);
+        return squareNum;
     }
+    private static double cube(int input) {
+        double cubeNum = Math.pow(input, 3);
+        return cubeNum;
+    }
+
 }
