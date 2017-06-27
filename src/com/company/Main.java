@@ -3,6 +3,8 @@ package com.company;
 Prompt the user to enter an integer
 Display a table of squares and cubes from 1 to the value entered
 Ask if the user wants to continue
+
+Formatted out is like magic need practice with that.
  */
 
 import java.util.Scanner;
@@ -13,6 +15,10 @@ public class Main {
         // write your code here
         System.out.println("Learn your squares and cubes!");
         Scanner scnr = new Scanner(System.in);
+        char cont;
+        String output;
+
+        do {
         System.out.println("Enter an integer");
         int uInput = scnr.nextInt();
 
@@ -20,12 +26,36 @@ public class Main {
         System.out.println("===========" + "===========" + "===========");
 
         for (int i=1; i<=uInput; i++){
-            System.out.print(i + "     ");
-            System.out.print(square(i) + "     ");
-            System.out.println(cube(i) + "     ");
+            output = String.format("%-11d", i); // no decimal after 11 or exception is thrown 11 digits in width
+            System.out.print(output);
+            //space(i); 10.3
+            output = String.format("%-11.0f", square(i)); // f in format for double return type 11 in space left justified 3 digits after
+            System.out.print(output);
+            //space(square(i));
+            output = String.format("%-11.0f", cube(i));  // f in format for double return type
+            System.out.println(output);
         }
+        System.out.println("Do you want to continue? Please use y or n");
+        cont = scnr.next().charAt(0);
 
+    } while (cont != 'n');
+
+    } // end Main
+
+   /*
+    private static void space(double num){
+
+        String sNum= Double.toString(num);
+        String outputSpaces = "";
+
+        double nSpaces=0;
+        nSpaces = 11 - sNum.length();
+
+        for(int i=0; i==nSpaces; i++){
+            outputSpaces Stringbuilder.append();
+        }
     }
+    */
 
     private static double square(int input) {
         double squareNum = Math.pow(input, 2);
