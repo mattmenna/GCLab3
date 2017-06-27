@@ -42,7 +42,6 @@ public class Main {
 
     } // end Main
 
-
     private static double square(int input) {
         double squareNum = Math.pow(input, 2);
         return squareNum;
