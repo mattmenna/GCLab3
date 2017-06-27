@@ -28,10 +28,10 @@ public class Main {
         for (int i=1; i<=uInput; i++){
             output = String.format("%-11d", i); // no decimal after 11 or exception is thrown 11 digits in width
             System.out.print(output);
-            //space(i); 10.3
-            output = String.format("%-11.0f", square(i)); // f in format for double return type 11 in space left justified 3 digits after
+
+            output = String.format("%-11.0f", square(i)); // f in format for double return type 11 in space left justified 0 digits after
             System.out.print(output);
-            //space(square(i));
+
             output = String.format("%-11.0f", cube(i));  // f in format for double return type
             System.out.println(output);
         }
@@ -42,20 +42,6 @@ public class Main {
 
     } // end Main
 
-   /*
-    private static void space(double num){
-
-        String sNum= Double.toString(num);
-        String outputSpaces = "";
-
-        double nSpaces=0;
-        nSpaces = 11 - sNum.length();
-
-        for(int i=0; i==nSpaces; i++){
-            outputSpaces Stringbuilder.append();
-        }
-    }
-    */
 
     private static double square(int input) {
         double squareNum = Math.pow(input, 2);
